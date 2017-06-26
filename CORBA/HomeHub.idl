@@ -1,0 +1,28 @@
+//homehub idl
+
+module HomeHub {
+
+Typedef sequence<Alarm> Log;
+Typedef sequence<string> RoomCoverage;
+
+struct Alarm {
+
+long time;
+long date;
+string sensor;
+string camera;
+string room;
+
+};
+
+interface  HomeHub {
+
+    readonly attribute string name;
+    readonly attribute Log theLog;
+    void raise_Alarm ( in Alarm alarm); 
+    void add_Camera( in Camera camera, in string room);
+    void add_Sensor( in Sensor sensor, in string room);
+
+};
+
+};

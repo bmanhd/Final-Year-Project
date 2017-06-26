@@ -1,0 +1,18 @@
+// camera server.idl
+
+struct Image {
+
+long time;
+long date;
+string byteArray;
+
+};
+
+interface  Camera {
+
+    readonly attribute string camera_name;
+    attribute string room;
+    attribute AlarmStatus current_status;
+    Image CurrentImage( );
+
+} ;
